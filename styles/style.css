@@ -1,14 +1,22 @@
+/* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 /* General Styles */
-body {
-    font-family: Arial, sans-serif;
+body, html {
     margin: 0;
     padding: 0;
-    line-height: 1.5;
-    color: #333;
-    background-color: #f9f9f9;
-    scroll-behavior: smooth; /* For smooth navigation scrolling */
+    height: 100%; /* Ensure the body takes the full viewport height */
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Allow the page to grow vertically */
+}
+
+/* Header Navigation */
 header {
     background-color: #222;
     padding: 15px 0;
@@ -36,6 +44,7 @@ header nav ul li a {
     text-decoration: none;
     padding: 5px 10px;
     font-size: 16px;
+    font-weight: 400;
 }
 
 header nav ul li a:hover {
@@ -43,24 +52,31 @@ header nav ul li a:hover {
     border-radius: 5px;
 }
 
+/* Main Content (flex to take the remaining space) */
+main {
+    flex: 1; /* Allow the content to grow and fill available space */
+    padding: 20px;
+}
+
+/* Sections */
 section {
     padding: 60px 20px;
     text-align: center;
-    opacity: 0; /* Initially hidden for animations */
-    transform: translateY(30px); /* Slide up animation */
-}
-
-section.active {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.6s ease;
 }
 
 h1, h2 {
     color: #222;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
+p {
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Footer */
 footer {
     background-color: #222;
     color: #fff;
